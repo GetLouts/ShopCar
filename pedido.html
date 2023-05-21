@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="fontawesome/css/all.css"> 
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/sweetalert2.css">
+</head>
+<body style="background-color: var(--primario)">
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="Logotipo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace"href="nosotros.html">Nosotros</a>
+        
+
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col">
+                    <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+                    <form id="procesar-pago">
+                        <div class="form-group row">
+                            <label for="cliente" class="col-12 col-md-2 col-form-label h2" style="color: #fff;">Cliente :</label>
+                            <div class="col-12 col-md-10 in">
+                                <input type="text" class="form-control" id="cliente"
+                                    placeholder="Ingresa nombre cliente" name="destinatario">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2" style="color: #fff;">Correo :</label>
+                            <div class="col-12 col-md-10 in">
+                                <input type="text" class="form-control" id="correo" placeholder="Ingresa tu correo" name="cc_to">
+                            </div>
+                        </div>
+
+                        <div id="carrito" class="form-group table-responsive" >
+                            <table class="form-group table" id="lista-compra" >
+                                <thead>
+                                    <tr>
+                                        <th style="color: #fff;" scope="col">Imagen</th>
+                                        <th style="color: #fff;" scope="col">Nombre</th>
+                                        <th style="color: #fff;" scope="col">Precio $</th>
+                                        <th class="cant" style="color: #fff;" scope="col">Cantidad</th>
+                                        <th style="color: #fff;" scope="col">Sub Total $</th>
+                                        <th style="color: #fff;" scope="col">Eliminar</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody class="ol">
+                                    
+                                </tbody>
+                                <tr>
+                                    <th style="color: #fff;" colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
+                                    <th style="color: #fff;" scope="col">
+                                        <p id="subtotal"></p>
+                                    </th>
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+                                <tr>
+                                    <th style="color: #fff;" colspan="4" scope="col" class="text-right">IGV :</th>
+                                    <th style="color: #fff;" scope="col">
+                                        <p id="igv"></p>
+                                    </th>
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+                                <tr>
+                                    <th style="color: #fff;" colspan="4" scope="col" class="text-right">TOTAL :</th>
+                                    <th style="color: #fff;" scope="col">
+                                        <input id="total" name="monto" class="font-weight-bold border-0" readonly style="background-color: var(--primario)"></input>
+                                    </th>
+                                    <!-- <th scope="col"></th> -->
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <div class="row justify-content-center" id="loaders">
+                            <img id="cargando" src="img/cargando.gif" width="10px">
+                        </div>
+
+                        <div class="row justify-content-between">
+                            <div class="col-md-4 mb-2">
+                                <a href="index.html" class="btn btn-warning btn-block">Seguir comprando</a>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <input type="submit" class="btn btn-success btn-block" id="submit" value="Realizar compra">
+                            </div>
+                            <!-- <div class="col-xs-12 col-md-4">
+                                <input type="submit" class="btn btn-success btn-block" id="procesar-compra" value="Realizar compra">
+                            </div> -->
+                            <!-- <button id="submit"
+                                   class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                    type="submit">
+                                <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+                            </button> -->
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/compra.js"></script>
+    <script src="js/enviarpedido.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/sweetalert2.min.js"></script>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End Store - Todos los derechos Reservados Alejandro 2022.</p>
+    </footer>
+    
+</body>
+</html>

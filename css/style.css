@@ -1,0 +1,367 @@
+:root {
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233,287,2);
+    --blanco: #fff;
+    --negro: #000;
+
+    --fuentePrincipal: 'Staatliches', normal;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,*:before, *after {
+      box-sizing: inherit;
+}
+
+/** Globales **/
+
+body {
+    background-color: var(--primario);
+    line-height: 1.5;
+}
+p {
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a{
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+
+.car{
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 60vw;
+}
+
+.contenedor_nosotros,
+.contenedor_comprar {
+    margin: 0 auto;
+    width: 60%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+}
+
+.contenedor_producto {
+    margin: 0 auto;
+    width: 100%;
+    height: 73.5vh;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 2.2rem;
+}
+h3 {
+    font-size: 3.4rem;
+}
+/** Header **/
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__logo {
+    margin: 2rem 0;
+    max-width: 10rem;
+}
+/** Footer **/
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 1.5rem;
+}
+.footer__texto {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 1rem;
+}
+/** Navegacion **/
+.navegacion {
+    background-color: var(--primarioOscuro);
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;  /** Separacion forma nueva**/
+}
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--secundario);
+}
+.car:hover {
+    color: var(--secundario);
+}
+/** Gird **/
+.grid {
+    gap: 2rem;
+    padding-bottom: 1em;
+}
+@media (min-width: 468px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 468px) {
+    .producto {
+        margin: 10px;
+    }
+}
+
+
+/** Productos **/
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+.producto__nombre {
+    font-size: 1rem;
+}
+.producto__precio {
+    font-size: 1.8rem;
+    color: var(--secundario);
+}
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1;
+}
+
+/** Graficos **/
+.grafico {
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+/** Nosotros Texto **/
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+@media (min-width: 768px) {
+    .nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    
+    
+    
+}
+.nosotros__imagen {
+    grid-row: 1 / 2;
+}
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+    }    
+}
+.text {
+    font-size: 1rem;
+}
+.text__o {
+    font-size: 1rem;
+}
+/** Bloques **/
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.bloque {
+    text-align: center;
+}
+.bloque__titulo {
+    font-size: 1.5em;
+    margin: 0;
+}
+/** Pagina del producto **/
+
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.formulario__campo {
+    border: 1rem solid var(--primarioOscuro);
+    background-color: transparent;
+    color: var(--negro);
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+}
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-size: 3rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
+
+/*SUBMENU */
+.submenu {
+    position: relative;
+    list-style: none;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+    top:100%;
+    z-index: 1;
+    background-color: var(--primarioOscuro);
+    color: #fff;
+    padding: 20px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    background-color: var(--secundario);
+    border: none;
+    font-size: 1rem;
+    font-family: var(--fuentePrincipal);
+    padding: 10px;
+    transition: background-color .3s ease;
+    box-sizing: border-box;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E1E1E1;
+    color: #fff;
+}
+input {
+    color: #fff;
+}
+.count-product{
+    position: absolute;
+    top: -24px;
+    right: -15px;
+    background-color: var(--primario);
+    padding: 1px 6px;
+    border-radius: 50%;
+    color: var(--secundario);
+    font-weight: 700;
+    font-family: system-ui;
+    line-height: 18px;
+}
+
+.whatsapp {
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+.swal-height {
+    height: 50vh;
+}
+
+.container_compra {
+    font-size: 5em;
+    margin: 40px 20px 420px 100px;
+}
+
+.total {
+    font-size: 1.5em;
+}
+.text-right{
+    text-align: right;
+}
+.ol img{
+    width: 100px;
+}
+
+#cargando {
+    display: none;  
+    border-radius: 100%;
+    background-image: var(--primario);
+}
+
+#loaders {
+    width: 20%;
+    border-radius: 100%;
+    margin: 0 auto;
+    background-color: var(--primario);
+}
+.in{
+    padding-bottom: 10px;
+}
+
+.cant {
+    width: 10%;
+}
